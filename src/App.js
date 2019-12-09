@@ -4,17 +4,21 @@ import React from 'react';
 // list 내 child들은 key value가 필요함
 
 class App extends React.Component {
-  add = () => {
-    console.log('add');
-  };
-
-  minus = () => {
-    console.log('minus');
-  };
   
   state = {
     count: 0
   }
+  
+  // state 값을 직접 바꾸는게 아니라 새롭게 선언(state는 object) update 느낌?
+  // setState는 state값을 새로 선언하고 render 함수에 refresh를 요청
+  add = () => {
+    this.setState(current => ({count: current.count +1}));
+    // this.setState({count: this.state.count +1});
+  };
+
+  minus = () => {
+    this.setState(current => ({count: current.count -1}));
+  };
   
   render() {
     return (
