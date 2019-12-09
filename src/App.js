@@ -1,11 +1,18 @@
 import React from 'react';
-import Test from './Test';
+
+function Test ({favorite}) {
+  return (
+      <div>
+          한 번 더 {favorite}
+      </div>
+  )
+}
 
 function App() {
   return (
     <div>
       <h1>hello!</h1>
-      <Test />
+      <Test favorite="rice!!"/>
     </div>
   );
 }
